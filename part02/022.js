@@ -1,3 +1,5 @@
+// 비교 연산
+
 console.log(5 == 5);
 console.log("5" == 5);
 console.log(5 == "5");

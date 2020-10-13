@@ -1,3 +1,5 @@
+// 조건문 - switch
+
 var subject = '자바스크립트';
 switch (subject) {
     case 'C언어':

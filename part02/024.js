@@ -1,3 +1,5 @@
+// 삼항 연산
+
 var condition = 5 > 10;
 condition ? console.log("Left") : console.log("Right");
 

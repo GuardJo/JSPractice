@@ -1,3 +1,5 @@
+// 객체 공부
+
 var family = {
     'address' : 'Seoul',
     members : {},

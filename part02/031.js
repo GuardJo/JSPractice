@@ -1,3 +1,5 @@
+// 객체 공부 : 속성 계산명
+
 var obj = {};
 for (var i = 0; i < 4; i++) {
     obj['key' + i] = i;

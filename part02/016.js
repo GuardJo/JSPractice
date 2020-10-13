@@ -1,3 +1,5 @@
+// 숫자형
+
 console.log(Infinity);
 console.log(1 / Infinity);
 console.log(0 / 0);

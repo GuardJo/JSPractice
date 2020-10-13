@@ -1,3 +1,5 @@
+// 반복문 for in
+
 var store = {
     snack : 1000,
     flower : 5000,

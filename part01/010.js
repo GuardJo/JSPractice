@@ -1,3 +1,5 @@
+// 조건문 - if
+
 var result = true;
 if (result) console.log("result가 참입니다.");
 if (!result) {

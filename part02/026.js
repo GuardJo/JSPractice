@@ -1,3 +1,5 @@
+// 자료형 변환
+
 console.log("5" + 1);
 console.log("5" - 1);
 console.log("5" * 2);

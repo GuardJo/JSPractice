@@ -1,3 +1,5 @@
+// 객체 문법 : 단축 속성명
+
 var adress = 'Seoul';
 var members = {};
 var addFamily = function(age, name, role) {

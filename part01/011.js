@@ -1,3 +1,5 @@
+// 조건문 - if, else if, else
+
 var number = 2;
 if (number == 1) {
     console.log('number = 1');

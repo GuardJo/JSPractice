@@ -1,3 +1,5 @@
+// 문자형
+
 console.log("I'm in Jeju");
 console.log('Sewha ocean is wonderful');
 console.log(`Have you ever eaten Mageolli?`);

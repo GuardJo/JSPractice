@@ -1,3 +1,5 @@
+// 반복문 while
+
 var hometown = [
     {name : "남준", place : "일산", city : "고양"},
     {name : "진", place : "과천"},
