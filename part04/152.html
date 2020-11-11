@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM 네비게이션</title>
+        <style>
+            .hero {
+                background-color: silver;
+                color : black;
+            }
+            nav {
+                background-color: black;
+                height : 100px;
+                vertical-align: middle;
+                text-align: center;
+            }
+            a {
+                padding: 50px;
+                margin : 50px;
+                color : white;
+            }
+            .articles {
+                background-color: green;
+                height : 3000px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <section class="hero">
+            <h1>스크롤을 아래로 내려보세요</h1>
+        </section>
+        <nav>
+            <a href="http://www.naver.com">naver</a>
+        </nav>
+        <section class="articles">
+        </section>
+        <script>
+            const nav1 = document.querySelector("nav");
+            const offset = nav1.offsetTop;
+            window.addEventListener("scroll", e => {
+                if (window.pageYOffset >= offset) {
+                    nav1.style.position = "fixed";
+                    nav1.style.left = 0;
+                    nav1.style.top = 0;
+                    nav1.style.right = 0;
+                }
+                else {
+                    nav1.style.position = "";
+                    nav1.style.top = "";
+                }
+            });
+        </script>
+    </body>
+</html>

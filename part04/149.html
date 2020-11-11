@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>이벤트 위임</title>
+    </head>
+    <body>
+        <h2>To Do List</h2>
+        <ul id="todo-list">
+            <li>
+                공부하기
+                <button class="remove-button">x</button>
+            </li>
+            <li>
+                장보기
+                <button class="remove-button">x</button>
+            </li>
+            <li>
+                숙제하기
+                <button class="remove-button">x</button>
+            </li>
+        </ul>
+        <script>
+            document.querySelector("ul#todo-list").addEventListener("click", e => {
+                if (e.target.className.indexOf("remove-button") < 0) {
+                    return;
+                }
+                const li = e.target.closest("li");
+                console.log(`${li.innerText} remove`);
+                li.remove();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>이벤트 처리하기</title>
+    </head>
+    <script>
+        const divE1 = document.getElementById("d1");
+        console.log(divE1);
+        document.addEventListener("DOMContentLoaded", e => {
+            const divE1 = document.getElementById("d1");
+            console.log(divE1);
+
+            const input1 = document.querySelector("input");
+            input1.addEventListener("keydown", e => {
+                console.log(`KeyCode : ${e.keyCode}`);
+            });
+            
+            const btn1 = document.querySelector("button");
+            btn1.addEventListener("click", e => {
+                console.log(e.target);
+                console.log(`input value : ${input1.value}`);
+            });
+        });
+    </script>
+<body>
+    <div id = "d1">
+        <input type="text">
+        <button>button</button>
+    </div>
+</body>
+</html>

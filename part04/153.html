@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>문서 이동하기</title>
+    </head>
+    <body>
+        <h1>Move Directory</h1>
+        <div id="location"></div>
+        <div>
+            <button id="outputInfo">현재 정보 출력</button>
+        </div>
+        <div>
+            문서 위치 변경 <button id="naver-btn">네이버로 이동</button>
+        </div>
+        <script>
+            const btn1 = document.getElementById("outputInfo");
+            const loc = document.getElementById("location");
+
+            btn1.addEventListener("click", e => {
+                loc.innerHTML = 
+                    `현재문서 : ${location.href} <br>
+                    현재 문서 도메인명 : ${location.hostname} <br>
+                    현재문서 경로명 : ${location.pathname} <br>
+                    현재 문서 프로토콜 : ${location.protocol} <br>`;
+            });
+
+            const btn2 = document.getElementById("naver-btn");
+            btn2.addEventListener("click", e => {
+                location.assign("http://naver.com");
+            });
+        </script>
+    </body>
+</html>

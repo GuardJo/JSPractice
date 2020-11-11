@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>이벤트 플로우</title>
+        <style>
+            .box1 {
+                background-color: yellow;
+                width : 120px;
+                height : 120px;
+                border: 1px solid black;
+                display: table-cell;
+            }
+            .box2 {
+                background-color:black;
+                margin: 10px;
+                margin-left: 10px;
+                width : 100px;
+                height : 100px;
+                color:white;
+                text-align: center;
+                vertical-align: middle;
+            }
+            body {
+                display: grid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM Event Flow</h1>
+        <div id="element1" class="box1">
+            <div id="element2" class="box2">버블링</div>
+        </div>
+        <div id="element3" class="box1">
+            <div id="element4" class="box2">캡처링</div>
+        </div>
+
+        <script>
+            const ele1 = document.getElementById("element1");
+            const ele2 = document.getElementById("element2");
+            const ele3 = document.getElementById("element3");
+            const ele4 = document.getElementById("element4");
+
+            ele1.addEventListener("click", e => {
+                console.log("element1");
+            });
+            ele2.addEventListener("click", e => {
+                console.log("element2");
+            });
+            ele3.addEventListener("click", e => {
+                console.log(`${ele3.id}`);
+            }, true);
+            ele4.addEventListener("click", e => {
+                console.log(`${ele4.id}`);
+            });
+        </script>
+    </body>
+
+</html>
