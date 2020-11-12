@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest 연습</title>
+</head>
+
+<body>
+    <h1>XMLHttpRequest Practice</h1>
+    <div id="user"></div>
+
+    <script>
+        function getHttp(url, successCallBack, errorcallBack) {
+            const req = new XMLHttpRequest();
+            req.onload = () => {
+                if (req.status >= 200 && req.status < 300) {
+                    successCallBack(req.response);
+                }
+                else {
+                    errorcallBack(new Error(req.statusText));
+                }
+            }
+            req.onerror = errorcallBack;
+            req.open("GET", url);
+            req.setRequestHeader("Accept", "application/json"); // 클라이언트가 받을 수 있는 데이터 타입 정의
+            req.send();
+        };
+
+        const userE1 = document.getElementById("user");
+        getHttp("http://api.github.com/users/guardjo", data => {
+            const user = JSON.parse(data);
+            userE1.innerHTML = `
+                <img src="${user.avatar_url}" />
+                <br> 사용자 이름 : ${user.login}, 깃헙주소 : ${user.html_url}`;
+        }, error => alert(error));
+    </script>
+</body>
+
+</html>

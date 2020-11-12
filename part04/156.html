@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>로컬 파일을 브라우저에서 읽기</title>
+        <style>
+            .dot-box {
+                width : 100%;
+                height : 200px;
+                border : 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Read LocalFile on browser </h1>
+        <div id="file-box" class="dot-box">
+            이미지 파일을 선택한 후 이곳에 끌어서 놓아주세요.
+        </div>
+        <button id="remove-btn">delete</button>
+        <output id="result"></output>
+
+        <script>
+            var dropZone = document.getElementById("file-box");
+            dropZone.addEventListener("dragover", e => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            dropZone.addEventListener("drop", e => {
+                e.preventDefault();
+                e.stopPropagation();
+                const files = e.dataTransfer.files;
+                Array.from(files).filter(file => file.type.match("image.*")).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const imgE1 = document.createElement("img");
+                        imgE1.className = "imgs";
+                        imgE1.src = e.target.result;
+                        imgE1.title = file.name;
+                        document.getElementById("result").appendChild(imgE1);
+                    }
+
+                    reader.readAsDataURL(file);
+                });
+            });
+            const btn1 = document.getElementById("remove-btn");
+            btn1.addEventListener("click", e => {
+                const image = document.querySelector(".imgs");
+                console.log(image);
+                image.remove();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>iframe 메시지 교환</title>
+        <style>
+            body {
+                display: table-row;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>iframe message</h1>
+        <div>
+            <fieldset>
+                <legend>결제</legend>
+                <label>결제금액 : </label> <b>20000원</b>
+                <br>
+                <button id="btn1">카드입력</button>
+            </fieldset>
+        </div>
+        <iframe id="iframe1"></iframe>
+
+        <script>
+            const iframe1 = document.getElementById("iframe1").contentWindow;
+            const btn1 = document.getElementById("btn1");
+            btn1.addEventListener("click", e => {
+                iframe1.location = "payment.html";
+            });
+            window.addEventListener("message", e => {
+                console.log(e.data);
+            });
+
+        </script>
+    </body>
+
+</html>
