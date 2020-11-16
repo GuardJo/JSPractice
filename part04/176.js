@@ -1,5 +1,6 @@
 /**
  * 웹 API 작성
+ * GET 방식
  */
 "use strict";
 
